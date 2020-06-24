@@ -19,7 +19,10 @@ const App = () => {
         <OCRState>
           <Router>
             <div className="App">
-              <Navbar title="Github Finder" icon="fab fa-github" />
+              <Navbar
+                title="Optical character recognition"
+                icon="fas fa-atom"
+              />
               <div className="container">
                 <Alert alert={alert} />
                 <Switch>

@@ -8,8 +8,6 @@ const Home = () => {
   return (
     <Fragment>
       <OCRState>
-        <Search></Search>
-        <Users></Users>
         <OCR></OCR>
       </OCRState>
     </Fragment>

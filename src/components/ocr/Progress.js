@@ -28,10 +28,20 @@ const Progress = ({ progress, progressBar }) => {
             height: "100%",
             width: "0",
             opacity: "1",
-            transition: "1s ease 0.3s",
+            transition: "ease",
             width: `${progress}%`,
           }}
-        ></div>
+        >
+          <img
+            src={require("../../resources/duck.gif")}
+            style={{
+              height: "4rem",
+              width: "3rem",
+              position: "absolute",
+              left: `${progress - 3}%`,
+            }}
+          ></img>
+        </div>
       ) : (
         "Process"
       )}

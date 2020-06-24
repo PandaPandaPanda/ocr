@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, Fragment } from "react";
 import Progress from "./Progress";
 import OCRContext from "../../context/ocr/ocrContext";
 import "../../App.css";
@@ -35,7 +35,7 @@ const OCR = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <input type="file" onChange={handlePreview} />
-      <h1>Preview</h1>
+      <h2>Preview</h2>
       <img src={imgSrc} alt="" style={{ width: "20rem", height: "auto" }} />
       {imgSrc !== null && (
         <div onClick={processImg}>
@@ -43,7 +43,12 @@ const OCR = () => {
         </div>
       )}
       {/* {progressBar === true && <Progress progress={progress} progressBar={progressBar}/>} */}
-      <p>{result}</p>
+      {result != null && (
+        <div style={{ margin: "0 0 10rem" }}>
+          <h2>Result</h2>
+          <p>{result}</p>
+        </div>
+      )}
     </div>
   );
 };
