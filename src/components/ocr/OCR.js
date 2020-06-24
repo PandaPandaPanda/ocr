@@ -13,6 +13,7 @@ const OCR = () => {
     processImg,
     progressBar,
     progress,
+    clearOCR,
   } = ocrContext;
 
   const handlePreview = (e) => {
@@ -33,23 +34,37 @@ const OCR = () => {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <Fragment>
       <input type="file" onChange={handlePreview} />
-      <h2>Preview</h2>
-      <img src={imgSrc} alt="" style={{ width: "20rem", height: "auto" }} />
+
+      <div style={{ display: "flex" }}>
+        <div style={{ width: "50%" }}>
+          <h2>Preview</h2>
+          <img src={imgSrc} alt="" style={{ width: "20rem", height: "auto" }} />
+        </div>
+
+        <div style={{ width: "50%" }}>
+          {result != null && (
+            <Fragment>
+              <div style={{ margin: "0.5rem 0 1rem" }}>
+                <h2>Result</h2>
+                <p>{result}</p>
+              </div>
+            </Fragment>
+          )}
+        </div>
+      </div>
       {imgSrc !== null && (
         <div onClick={processImg}>
           <Progress progress={progress} progressBar={progressBar}></Progress>
         </div>
       )}
-      {/* {progressBar === true && <Progress progress={progress} progressBar={progressBar}/>} */}
       {result != null && (
-        <div style={{ margin: "0 0 10rem" }}>
-          <h2>Result</h2>
-          <p>{result}</p>
-        </div>
+        <button className="tbn btn-light btn-block" onClick={clearOCR}>
+          Clear
+        </button>
       )}
-    </div>
+    </Fragment>
   );
 };
 

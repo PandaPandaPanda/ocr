@@ -10,11 +10,19 @@ export default (state, action) => {
   switch (action.type) {
     case LOAD_IMG:
       return {
-        ...state,
         imgSrc: action.payload,
+        result: null,
+        progressBar: false,
+        progress: 0,
       };
     case CLEAR_OCR:
-      return null;
+      return {
+        ...state,
+        imgSrc: null,
+        result: null,
+        progressBar: false,
+        progress: 0,
+      };
     case PROCESS_IMG:
       return {
         ...state,

@@ -46,6 +46,8 @@ const OCRState = (props) => {
     });
   };
 
+  const clearOCR = () => dispatch({ type: CLEAR_OCR });
+
   const setProgressBar = () => dispatch({ type: SET_PROGRESS_BAR });
 
   const setProgress = (progress) =>
@@ -61,6 +63,7 @@ const OCRState = (props) => {
         uploadImg,
         processImg,
         setProgress,
+        clearOCR,
       }}
     >
       {props.children}

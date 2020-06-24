@@ -8,7 +8,7 @@ const Progress = ({ progress, progressBar }) => {
         backgroundColor: "#d8d8d8",
         borderRadius: "20px",
         position: "relative",
-        margin: "2rem auto 5rem",
+        margin: "2rem auto 2rem",
         height: "2rem",
         width: "80%",
         textAlign: "center",
