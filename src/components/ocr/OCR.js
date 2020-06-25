@@ -35,36 +35,43 @@ const OCR = () => {
   };
 
   return (
-    <div id="ocr">
-      <input type="file" onChange={handlePreview} />
+    <Fragment>
+      <div id="ocr">
+        <div id="ocr-content">
+          <Card border="secondary">
+            <Card.Header>Upload Image</Card.Header>
+            <Card.Body>
+              {imgSrc === null ? (
+                <div class="file-upload">
+                  <input type="file" onChange={handlePreview} />
+                  <i class="fa fa-arrow-up"></i>
+                </div>
+              ) : (
+                <Card.Img src={imgSrc}></Card.Img>
+              )}
+            </Card.Body>
+          </Card>
 
-      <div id="ocr-content">
-        <Card primary style={{ width: "18rem" }} className="m-2">
-          <Card.Header>Preview</Card.Header>
-          <Card.Body>
-            <Card.Img src={imgSrc}></Card.Img>
-          </Card.Body>
-        </Card>
+          <Card border="secondary">
+            <Card.Header>Result</Card.Header>
+            <Card.Text>{result}</Card.Text>
+          </Card>
+        </div>
 
-        <Card primary style={{ width: "18rem" }} className="m-2">
-          <Card.Header>Result</Card.Header>
-          <Card.Text>{result}</Card.Text>
-        </Card>
+        {imgSrc !== null && (
+          <Fragment>
+            <Progress progress={progress} progressBar={progressBar}></Progress>
+
+            <button
+              className="tbn btn-light btn-block mb-2"
+              onClick={result !== null ? clearOCR : processImg}
+            >
+              {result !== null ? "Clear" : "Process"}
+            </button>
+          </Fragment>
+        )}
       </div>
-
-      {imgSrc !== null && (
-        <Fragment>
-          <Progress progress={progress} progressBar={progressBar}></Progress>
-
-          <button
-            className="tbn btn-light btn-block mb-2"
-            onClick={result !== null ? clearOCR : processImg}
-          >
-            {result !== null ? "Clear" : "Process"}
-          </button>
-        </Fragment>
-      )}
-    </div>
+    </Fragment>
   );
 };
 

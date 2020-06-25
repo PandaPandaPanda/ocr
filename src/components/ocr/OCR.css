@@ -12,8 +12,9 @@
 }
 
 #ocr-content {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
 }
 #ocr-content div {
   justify-self: center;
@@ -21,6 +22,47 @@
 
 button {
   width: "80%";
+}
+
+.file-upload {
+  height: 6.25rem;
+  width: 6.25rem;
+  border-radius: 6.25rem;
+  position: relative;
+  background-position: 0 -100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #cdcdcd;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, #cdcdcd 50%, #ffffff 50%);
+  background-size: 100% 200%;
+  transition: all 1s;
+  color: #cdcdcd;
+  font-size: 3.125rem;
+  justify-self: center;
+
+  margin: auto;
+}
+
+.file-upload:hover {
+  background-position: 0 0;
+
+  color: #ffffff;
+}
+
+input[type="file"] {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

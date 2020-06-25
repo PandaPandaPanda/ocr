@@ -15,7 +15,7 @@ const App = () => {
     <OCRState>
       <Router>
         <div className="App">
-          <Navbar title="OCR" icon="fas fa-atom" />
+          <Navbar title="OCR (Convert Image to Text)" icon="fas fa-atom" />
           <div className="container">
             <Switch>
               <Route exact path="/" component={Home} />

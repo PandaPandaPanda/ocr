@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Nav, Navbar as ReactNavbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar as ReactNavbar } from "react-bootstrap";
 import "./Navbar.css";
 
 const Navbar = ({ icon, title }) => {
