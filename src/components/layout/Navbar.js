@@ -11,11 +11,15 @@ const Navbar = ({ icon, title }) => {
         <ReactNavbar.Brand href="/">{title}</ReactNavbar.Brand>
         <ReactNavbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactNavbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/about">about</Nav.Link>
+          <Nav className="mr-auto"></Nav>
+          <Nav>
+            <Nav.Link href="/" style={{ color: "white" }}>
+              Home
+            </Nav.Link>
+            <Nav.Link href="/about" style={{ color: "white" }}>
+              about
+            </Nav.Link>
           </Nav>
-          <Nav></Nav>
         </ReactNavbar.Collapse>
       </ReactNavbar>
     </Fragment>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Progress = ({ progress, progressBar }) => {
+const Progress = ({ progress }) => {
   return (
     <div
       className="progress"
@@ -37,7 +37,7 @@ const Progress = ({ progress, progressBar }) => {
             height: "4rem",
             width: "3rem",
             position: "absolute",
-            left: `${progress - 5}%`,
+            left: `${progress - 4}%`,
             zIndex: "10",
           }}
         ></img>
