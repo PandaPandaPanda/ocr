@@ -1,34 +1,30 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Nav, Navbar as ReactNavbar, NavDropdown } from "react-bootstrap";
+import "./Navbar.css";
 
 const Navbar = ({ icon, title }) => {
   // defaultProps are used when nothing is passed from the parent
   return (
-    <nav className="navbar bg-primary">
-      {/* Pass each user as a prop to UserItem */}
-      <h1>
-        <i className={icon}></i> {title}
-      </h1>
-      <ul>
-        <li>
-          {/* Avoid using a tag for links */}
-          {/* React don't store states for html */}
-          {/* Import Link from react-router-dom and use it */}
-          {/* to='' works like href */}
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
-    </nav>
+    <Fragment>
+      <ReactNavbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <ReactNavbar.Brand href="/">{title}</ReactNavbar.Brand>
+        <ReactNavbar.Toggle aria-controls="responsive-navbar-nav" />
+        <ReactNavbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about">about</Nav.Link>
+          </Nav>
+          <Nav></Nav>
+        </ReactNavbar.Collapse>
+      </ReactNavbar>
+    </Fragment>
   );
 };
 
 Navbar.defaultProps = {
-  title: "Github Finder",
-  icon: "fab fa-github",
+  title: "OCR",
+  icon: "",
 };
 
 Navbar.propTypes = {
