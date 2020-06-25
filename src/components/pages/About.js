@@ -5,7 +5,7 @@ const About = () => {
     <div style={{ margin: "auto"}}>
       <h1 style={{ margin: 50}}>UWSE25 - A Need For Speed</h1>
       <p>
-        Greetings friend! We are Kevin Wu and Jenny Tai. Nice to meet you!
+        Greetings friend! We are Kevin Xu and Jenny Tai. Nice to meet you!
       <br></br>
         We interpret "A need for speed" as in efficiency. As a result, we made a
         website that will help improve productivity. 
