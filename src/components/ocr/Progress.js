@@ -34,8 +34,8 @@ const Progress = ({ progress }) => {
         <img
           src={require("../../resources/duck.gif")}
           style={{
-            height: "4rem",
-            width: "3rem",
+            height: "6rem",
+            width: "4rem",
             position: "absolute",
             left: `${progress - 4}%`,
             zIndex: "10",
