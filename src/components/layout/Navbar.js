@@ -17,7 +17,7 @@ const Navbar = ({ icon, title }) => {
               Home
             </Nav.Link>
             <Nav.Link href="/about" style={{ color: "white" }}>
-              about
+              About
             </Nav.Link>
           </Nav>
         </ReactNavbar.Collapse>
